@@ -11,6 +11,13 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+use Illuminate\Support\Facades\Route;
+
+
+//Route::get('permiso', 'PermisoController@index');
+//Route::view('permiso', 'permiso');
+//Route::get('permiso/{nombre}/{slug}', 'PermisoController@index'); //parametro nombre obligatorio
+//Route::get('admin/sistema/permiso','PermisoController@index')->name('permiso');
+Route::get('permiso/{nombre}', function ($nombre) {
+    return $nombre;
+})->where('nombre','[A-Za-z]+')->name('permiso');
