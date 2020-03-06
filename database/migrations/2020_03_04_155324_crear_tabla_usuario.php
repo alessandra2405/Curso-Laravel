@@ -20,6 +20,8 @@ class CrearTablaUsuario extends Migration
             $table->string('nombre', 50);
             //$table->string('email', 100)->unique();
             $table->timestamps();
+            $table->charset = 'utf8mb4';
+            $table->collation = 'utf8mb4_spanish_ci';
         });
     }
 
